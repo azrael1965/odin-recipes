@@ -21,36 +21,82 @@ function getHumanChoice(){
     return choice;
 }
 
-//x is human y is comp
-let score = [0,0];
-human = getHumanChoice()
-comp = getComputerChoice();
-
-console.log("Human Choice: " + human);
-console.log("Computer Choice: " + comp);
-
-
-// if the computer choice and human choice are the same both get one point
-//options is list of rock paper scissors
-if (human == comp){
-    score[0]++;
-    score[1]++;
-    console.log("It's a tie.")
-} //rock human, paper comp 
-else if (human == options[0] && comp == options[1]) {
-    score[1]++;
-    console.log("You Lose This Round");
-}//rock human, scissors comp
-else if (human == options[0] && comp == options[2]) {
-    score[0]++;
-    console.log("You Win This Round");
+function youWin(){
+    console.log("You Win this Round");
 }
 
-console.log("Human Score: " + score[0]);
-console.log("Computer Score: " + score[1]);
-//console.log(getComputerChoice());
+function youLose(){
+    console.log("You Lose this Round");
+}
 
+function tieGame(){
+    console.log("It's a tie this Round");
+}
 
+//x is human y is comp
+function playGame(){
+    let score = [0,0];
+    
+    
+        for(let i = 0; i < 5; i++){
+        human = getHumanChoice()
+        comp = getComputerChoice();
+
+        //console.log("Human Choice: " + human);
+       // console.log("Computer Choice: " + comp);
+
+       
+        // if the computer choice and human choice are the same both get one point
+        //options is list of rock paper scissors
+        if (human == comp){
+            score[0]++;
+            score[1]++;
+            tieGame();
+        } 
+
+        //rock human, paper comp 
+        else if (human == options[0] && comp == options[1]) {
+            score[1]++;
+            youLose();
+        }//rock human, scissors comp
+        else if (human == options[0] && comp == options[2]) {
+            score[0]++;
+            console.log("You Win This Round");
+        }
+
+        //paper human rock comp
+        else if (human == options[1] && comp == options[0]) {
+            score[1]++;
+            console.log("You Win This Round");
+        }//paper human, scissors comp
+        else if (human == options[1] && comp == options[2]) {
+            score[0]++;
+            youLose();
+        }
+
+        //scissor human rock comp
+        else if (human == options[2] && comp == options[0]) {
+            score[1]++;
+            youLose();
+        }//scissor human, paper comp
+        else if (human == options[2] && comp == options[1]) {
+            score[0]++;
+            console.log("You Win This Round");
+        }
+       
+    }
+    console.log("Human Score: " + score[0]);
+    console.log("Computer Score: " + score[1]);
+    if (score[0] > score[1]){
+        console.log("You win the game!");
+    } else if (score[0]==score[1]) {
+        console.log("It's a tie game.");
+    } else {
+        console.log("You lost the game.");
+    }
+}
+
+playGame();
 
 
 
