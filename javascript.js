@@ -1,5 +1,5 @@
 // Rock Paper Scissors Game
-console.log("Hello World");
+//console.log("Hello World");
 
 const choice = ["rock", "paper", "scissors"];
 
@@ -17,7 +17,7 @@ function getHumanChoice(){
     return choice;
 }
 
-console.log(getComputerChoice());
+//console.log(getComputerChoice());
 
 let humanScore = 0;
 let computerScore = 0;
@@ -25,45 +25,47 @@ let computerScore = 0;
 function playRound(){
     let human = getHumanChoice();
     let comp = getComputerChoice();
-
-
-    if (human == "rock" && comp == "paper") {
-        console.log("You Lose");
-        computerScore ++;
-    } else if (human == "paper" && comp == "scissors") {
-        console.log("You Lose");
-        computerScore ++;
-    } else if (human == "scissors" && comp == "rock") {
-        console.log("You Lose");
-        computerScore ++;
-    } else if (human == "rock" && comp == "rock"){
-        console.log("It's a tie");
-        computerScore ++;
-        humanScore ++;
-    } else if (human == "paper" && comp == "paper"){
-        console.log("It's a tie");
-        computerScore ++;
-        humanScore ++;
-    } else if (human == "scissors" && comp == "scissors"){
-        console.log("It's a tie");
-        computerScore ++;
-        humanScore ++;
-    } else if (human == "rock" && comp =="scissors") {
-        console.log("You Win");
-        humanScore ++;
-    } 
-    else if (human == "scissors" && comp =="paper") {
-        console.log("You Win");
-        humanScore ++;
-    } else if (human == "paper" && comp =="rock") {
-        console.log("You Win");
-        humanScore ++;
-    } 
-
-    return humanScore, computerScore;
+    
+        // if (human == "rock" && comp == "paper") {
+        //     console.log("You Lose");
+        //     computerScore ++;
+        // } else if (human == "paper" && comp == "scissors") {
+        //     console.log("You Lose");
+        //     computerScore ++;
+        // } else if (human == "scissors" && comp == "rock") {
+        //     console.log("You Lose");
+        //     computerScore ++;
+        // } else if (human == "rock" && comp == "rock"){
+        //     console.log("It's a tie");
+        //     computerScore ++;
+        //     humanScore ++;
+        // } else if (human == "paper" && comp == "paper"){
+        //     console.log("It's a tie");
+        //     computerScore ++;
+        //     humanScore ++;
+        // } else if (human == "scissors" && comp == "scissors"){
+        //     console.log("It's a tie");
+        //     computerScore ++;
+        //     humanScore ++;
+        // } else if (human == "rock" && comp =="scissors") {
+        //     console.log("You Win");
+        //     humanScore ++;
+        // } 
+        // else if (human == "scissors" && comp =="paper") {
+        //     console.log("You Win");
+        //     humanScore ++;
+        // } else if (human == "paper" && comp =="rock") {
+        //     console.log("You Win");
+        //     humanScore ++;
+        // } 
 }
 
-playRound();
+for (let step = 0; step < 5; step++) {
+    // Runs 5 times, with values of step 0 through 4.
+    playRound();
+  }
 
-console.log(humanScore);
+
+
+console.log("Wins" + humanScore);
 
