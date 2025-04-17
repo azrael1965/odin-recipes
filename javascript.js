@@ -19,10 +19,19 @@ function getComputerChoice() {
 }
 
 function getHumanChoice(){
-    let choice = prompt("Rock, Paper, Or Scissors?");
-    choice = choice.toLowerCase();
+    let choice = '';
+    button.forEach(bt => {
+        bt.addEventListener('click', () =>{
+            console.log(bt.value);
+            choice = bt.value;
+        });
     return choice;
+    });
 }
+//     choice = choice.toLowerCase();
+//     console.log('You picked: ' + choice.value);
+//     return choice;
+// }
 
 function youWin(){
     console.log("You Win this Round");
@@ -35,6 +44,23 @@ function youLose(){
 function tieGame(){
     console.log("It's a tie this Round");
 }
+
+//Make Select
+const button = document.querySelectorAll('button');
+
+//Add values to buttons
+for (i=0; i<button.length; i++){
+    button[i].value = options[i];
+};
+
+// button.forEach(bt => {
+//     bt.addEventListener('click', () =>{
+//         console.log(bt.value);
+//     })
+// });
+
+let x = getHumanChoice();
+console.log(x);
 
 //x is human y is comp
 function playGame(){
@@ -100,22 +126,3 @@ function playGame(){
 }
 
 //playGame();
-
-//Make Select
-const button = document.querySelectorAll('button');
-
-//Add values to buttons
-for (i=0; i<button.length; i++){
-    button[i].value = options[i];
-};
-
-button.forEach(bt => {
-    bt.addEventListener('click', () =>{
-        console.log(bt.value);
-    })
-})
-console.log(button[0].value);
-console.log(button[1].value);
-console.log(button[2].value);
-
-
