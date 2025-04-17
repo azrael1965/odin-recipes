@@ -1,13 +1,16 @@
-// Rock Paper Scissors Game
-//console.log("Hello World");
-
 
 //Full List
 const options = ["rock", "paper", "scissors"];
 
-//Testing List
-//const options = ["rock"];
+// //Set button values
+// const button1 = document.querySelector('button1');
+// button1.value = '';
+// //const button2 = document.querySelector('button2').value = 'paper';
+// const button3 = document.querySelector('button3').value = 'scissors';
 
+// console.log(button1);
+// //console.log(button2);
+// //console.log(button3);
 
 function getComputerChoice() {
     // Use Math.random() to generate a random number between 0 and 1,
@@ -96,82 +99,23 @@ function playGame(){
     }
 }
 
-playGame();
+//playGame();
 
+//Make Select
+const button = document.querySelectorAll('button');
 
-//
+//Add values to buttons
+for (i=0; i<button.length; i++){
+    button[i].value = options[i];
+};
 
+button.forEach(bt => {
+    bt.addEventListener('click', () =>{
+        console.log(bt.value);
+    })
+})
+console.log(button[0].value);
+console.log(button[1].value);
+console.log(button[2].value);
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// let humanScore = 0;
-// let computerScore = 0;
-
-// function playRound(){
-//     let human = getHumanChoice();
-//     let comp = getComputerChoice();
-//     if (human in choice){
-//         console.log(human)
-//     } else {console.log("You Mispelled Something");
-//         console.log("Here is your spelling : " + human);
-//         human = getHumanChoice();
-//     }
-//         // if (human == "rock" && comp == "paper") {
-//         //     console.log("You Lose");
-//         //     computerScore ++;
-        // } else if (human == "paper" && comp == "scissors") {
-        //     console.log("You Lose");
-        //     computerScore ++;
-        // } else if (human == "scissors" && comp == "rock") {
-        //     console.log("You Lose");
-        //     computerScore ++;
-        // } else if (human == "rock" && comp == "rock"){
-        //     console.log("It's a tie");
-        //     computerScore ++;
-        //     humanScore ++;
-        // } else if (human == "paper" && comp == "paper"){
-        //     console.log("It's a tie");
-        //     computerScore ++;
-        //     humanScore ++;
-        // } else if (human == "scissors" && comp == "scissors"){
-        //     console.log("It's a tie");
-        //     computerScore ++;
-        //     humanScore ++;
-        // } else if (human == "rock" && comp =="scissors") {
-        //     console.log("You Win");
-        //     humanScore ++;
-        // } 
-        // else if (human == "scissors" && comp =="paper") {
-        //     console.log("You Win");
-        //     humanScore ++;
-        // } else if (human == "paper" && comp =="rock") {
-        //     console.log("You Win");
-        //     humanScore ++;
-        // } 
-//}
-
-
-// This is the loop to play 5 times
-// for (let step = 0; step < 5; step++) {
-//     // Runs 5 times, with values of step 0 through 4.
-//     playRound();
-//   }
-
-
-
-//console.log("Wins" + humanScore);
 
